@@ -6,11 +6,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 
-const images = [
-  '/frame1_carousel.png',
-  '/frame1_carousel.png'
-];
-
 export default function Home()
 {
   const [progress, setProgress] = React.useState(Math.floor(Math.random() * 40));
@@ -21,7 +16,7 @@ export default function Home()
   }, [progress, setProgress]);
 
   return (
-    <section className={cn('min-h-screen')}>
+    <section className={cn('md:h-screen', 'md:w-full','md:flex', 'md:flex-col', 'md:justify-center', 'md:items-center')}>
       <section className={cn('flex', 'space-x-2', 'p-5', 'flex-col', 'md:text-center', 'md:align-middle', 'md:justify-center', 'md:items-center')}>
         <h1 className={cn('md:text-8xl', 'text-6xl', 'text-[#006769]', 'font-extrabold', 'font-sans')}>
           Wiboniku
@@ -45,17 +40,17 @@ export default function Home()
         </Button>
       </section>
       <section className={cn('mt-12')}>
-        <h1 className={cn('text-center', 'text-4xl', 'md:text-6xl', 'font-bold', 'text-[#006769]')}>
+        <h1 className={cn('ml-5', 'md:text-center', 'text-4xl', 'md:text-6xl', 'font-bold', 'text-[#006769]')}>
           Why <span className={cn('text-[#40A578]')}>Wiboniku</span> ?
         </h1>
-        <div className="mt-5">
-          <p className={cn('text-center', 'text-xl')}>
+        <div className={cn('mt-3', 'md:mt-5')}>
+          <p className={cn('md:text-center', 'text-md', 'ml-6')}>
             Because we&apos;re <i>
               open-source, fast, and free
             </i>
           </p>
-          <div className={cn('flex', 'flex-row', 'text-center', 'align-middle', 'justify-center', 'items-center', 'mt-3')}>
-            <Progress value={progress} className="w-[80%] md:w-[30%] bg-[#9DDE8B]" />
+          <div className={cn('flex', 'flex-row', 'text-center', 'align-middle', 'justify-center', 'items-center', 'mt-3', )}>
+            <Progress value={progress} className="w-[85%] md:w-[70%] lg:w-[50%] bg-[#9DDE8B]" />
           </div>
           <p className={cn('text-center', 'mt-5', 'font-light', 'text-wrap')}>
             We are strongly focusing on generate frame image without watermark, and provide free service
